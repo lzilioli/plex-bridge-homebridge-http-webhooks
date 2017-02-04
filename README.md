@@ -45,4 +45,6 @@ Now run the script with the `PLAYER` argument:
 PLAYER=<PLAYER_UUID> ACCESSORY=plexContact URL=http://localhost:51828/ node index.js
 ```
 
+From now on, when you toggle the plex play state from the `PLAYER`, you should see the contact sensor state update in the iOS 10 Home app. Using the Home app, you can create Automation rules based on these changes.
+
 Thanks to [plexinc/webhooks-home-automation](https://github.com/plexinc/webhooks-home-automation).
