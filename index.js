@@ -11,6 +11,7 @@ var upload = multer({ dest: '/tmp/' });
 
 app.post('/', upload.single('thumb'), function (req, res, next) {
   var payload = JSON.parse(req.body.payload);
+  debug('webhook hit', payload);
   console.log('Got webhook for', payload.event);
 
   // Apple TV.
