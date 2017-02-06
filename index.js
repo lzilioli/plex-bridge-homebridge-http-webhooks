@@ -14,7 +14,6 @@ app.post('/', upload.single('thumb'), function (req, res, next) {
   debug('webhook hit', payload);
   console.log('Got webhook for', payload.event);
 
-  // Apple TV.
   if (payload.owner && payload.Player.uuid == process.env.PLAYER && payload.Metadata.type != 'track') {
     var options = {
       method: 'GET',
@@ -30,7 +29,7 @@ app.post('/', upload.single('thumb'), function (req, res, next) {
       };
       request(options);
     } else if (payload.event == 'media.pause' || payload.event == 'media.stop') {
-      console.log(`Closing ${process.env.ACCESSORY} contactSensor.`);
+      console.log(`Closing ${process.env.ACCESSORY} contact sensor.`);
       options.qs = {
         state: true,
         accessoryId: process.env.ACCESSORY
