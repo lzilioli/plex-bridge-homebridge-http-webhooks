@@ -1,6 +1,6 @@
 {
   "name": "plex-bridge-homebridge-http-webhooks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {},
   "dependencies": {
