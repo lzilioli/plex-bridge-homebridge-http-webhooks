@@ -18,7 +18,7 @@ app.post('/', upload.single('thumb'), function (req, res, next) {
     var options = {
       method: 'GET',
       json: false,
-      url: process.env.URL,
+      url: process.env.HB_WEBHOOK_URL,
     };
 
     if (payload.event == 'media.play' || payload.event == 'media.resume') {
@@ -41,4 +41,5 @@ app.post('/', upload.single('thumb'), function (req, res, next) {
   res.sendStatus(200);
 });
 
-app.listen(12000);
+console.log(`point plex webhooks to http://localhost:${process.env.PLEX_WEBHOOK_PORT || 12000} at https://app.plex.tv/web/app##!/account/webhooks`);
+app.listen(process.env.PLEX_WEBHOOK_PORT || 12000);
