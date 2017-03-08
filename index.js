@@ -40,6 +40,7 @@ app.post('/', upload.single('thumb'), function (req, res, next) {
 
   if(payload.Metadata.type === 'track'){
     debug(`ignoring request because payload.Metadata.type === 'track'`)
+    return;
   }
 
   var options = {
