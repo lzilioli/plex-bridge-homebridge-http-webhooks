@@ -33,8 +33,9 @@ app.post('/', upload.single('thumb'), function (req, res, next) {
     return;
   }
 
-  if(payload.Player.uuid !== process.env.PLAYER){
-    debug(`ignoring request because player uuid ${payload.Player.uuid} !== env PLAYER ${process.env.PLAYER}`);
+  if(payload.Player.title !== process.env.PLAYER){
+    debug(Object.keys(payload.Player))
+    debug(`ignoring request because player title ${payload.Player.title} !== env PLAYER ${process.env.PLAYER}`);
     return;
   }
 
