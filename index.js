@@ -4,7 +4,7 @@ var express = require('express');
 var request = require('request');
 var multer = require('multer');
 var bodyParser = require('body-parser');
-var debug = require('debug')('plex-bridge-homebridge-http-webhooks');
+var debug = require('debug')('plex:bridge-homebridge-http-webhooks');
 
 var app = express();
 var upload = multer({ dest: '/tmp/' });
@@ -34,7 +34,7 @@ app.post('/', upload.single('thumb'), function (req, res, next) {
   }
 
   if(payload.Player.uuid !== process.env.PLAYER){
-    debug(`ignoring request because player uuid ${paylaod.Player.uuid} !== env PLAYER ${process.env.PLAYER}`);
+    debug(`ignoring request because player uuid ${payload.Player.uuid} !== env PLAYER ${process.env.PLAYER}`);
     return;
   }
 
