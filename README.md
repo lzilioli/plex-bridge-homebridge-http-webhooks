@@ -1,5 +1,13 @@
 # plex-bridge-homebridge-http-webhooks
 
+# ARCHIVED
+
+This repo's intended purpose has been met by [homebridge-plex-sensors](https://www.npmjs.com/package/homebridge-plex-sensors).
+I recommend it in place of this package. The code here is still a decent starting point if you want to map a plex
+webhook to some other form of web request, but it is not super useful in its current state.
+
+#  Getting Started
+
 In order to run this app:
 
 - Install [node.js](https://nodejs.org/en/).
